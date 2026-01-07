@@ -90,7 +90,11 @@ jediForm.addEventListener('submit', async (event) => {
             console.log('Elemento creado');
             loadJedis();
         } else {
-            throw new Error('Fallo al crear')
+            if (response.status == 400) {
+                let data = await response.json();
+                throw new Error('400 - Fallo en los datos. ' + data.error);
+            }
+            throw new Error('Fallo al crear');
         }
     } catch (error) {
         console.log("ERROR: ", error)
@@ -100,6 +104,10 @@ jediForm.addEventListener('submit', async (event) => {
 async function editJedi(id) {
     let newName = prompt('Introduce el nuevo nombre');
     let newSpecies = prompt('Introduce la nueva especie');
+    if (!newName || !newSpecies) {
+        alert("Datos no válidos");
+        return;
+    }
     console.log("Nombre: %s, Especie: %s", newName, newSpecies);
     let data = {
         name: newName,
@@ -131,7 +139,13 @@ async function showJedi(id) {
             let jedi = await response.json();
             alert(jedi.name);
         } else {
-            throw new Error('Fallo al motrar')
+            if (response.status == 404) {
+                let data = await response.json();
+                alert(data.error);
+                loadJedis();
+                throw new Error(data.error);
+            }
+            throw new Error('Fallo al mostrar')
         }
     } catch (error) {
         console.log("ERROR: ", error)

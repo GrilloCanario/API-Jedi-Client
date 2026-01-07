@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>API Jedi</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="jedi.js" defer></script>
 </head>
 
 <body>
@@ -22,10 +23,17 @@
     </header>
 
     <main>
-        <h1><strong>Bienvenido</strong></h1>
-        <p>
-            Esto es una API sobre la temática de Jedi. Esta API tiene tanto lado servidor como cliente.
-        </p>
+        <h1><strong>Jedi</strong></h1>
+        <h2>Crear nuevo Jedi</h2>
+        <form id="jediForm">
+            <p>
+                <input type="text" name="name" id="jediName" placeholder="Nombre del jedi...">
+                <input type="text" name="species" id="jediSpecie" placeholder="Nombre de la raza...">
+                <input type="submit" value="Crear">
+            </p>
+        </form>
+        <!-- <p>Bienvenido a la API de los Jedi.</p> -->
+        <ul id="jedisList"></ul>
     </main>
 
     <footer>
