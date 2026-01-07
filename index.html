@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>API Jedi</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Jedi</a></li>
+                <li><a href="#">Rangos</a></li>
+                <li><a href="#">Formas Combate</a></li>
+                <li><a href="#">Especializaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1><strong>Bienvenido</strong></h1>
+        <h2>Crear nuevo Jedi</h2>
+        <form id="jediForm">
+            <p>
+                <input type="text" name="name" id="jediName" placeholder="Nombre del jedi..." required>
+                <input type="text" name="name" id="jediSpecie" placeholder="Nombre de la raza...">
+                <input type="submit" value="Crear">
+            </p>
+        </form>
+        <!-- <p>Bienvenido a la API de los Jedi.</p> -->
+        <ul id="jedisList"></ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Mi API Jedi </p> <p class="italic-footer"><strong>Que el código luminoso te acompañe</strong></p>
+    </footer>
+
+</body>
+
+</html>
