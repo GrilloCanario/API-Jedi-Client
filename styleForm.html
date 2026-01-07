@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>API Jedi</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="styleForm.js" defer></script>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="jedi.html">Jedi</a></li>
                 <li><a href="rangos.html">Rangos</a></li>
-                <li><a href="formasCombate.html">Formas Combate</a></li>
+                <li><a href="styleForm.html">Formas Combate</a></li>
                 <li><a href="especializaciones.html">Especializaciones</a></li>
             </ul>
         </nav>
@@ -23,9 +24,16 @@
 
     <main>
         <h1><strong>Forma de Combate Jedi</strong></h1>
-        <p>
-            Estilos.
-        </p>
+        <form id="CombatForm">
+            <p>
+                <input type="text" name="name" id="CombatName" placeholder="Nombre del jedi...">
+                <input type="submit" value="Crear">
+                <br> 
+                <textarea name="styleCombat" id="styleCombat"placeholder="Descripción de la forma de combate..."></textarea>
+            </p>
+        </form>
+        <h2>Listado de Formas Combate</h2>
+        <div id="styleFormContainer"></div>
     </main>
 
     <footer>

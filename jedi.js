@@ -1,18 +1,20 @@
 const URL = "http://localhost:3030";
-const jedisList = document.getElementById('jedisList');
+
+const jedisContainer = document.getElementById('jedisContainer');
 const jediForm = document.getElementById('jediForm');
 const jediName = document.getElementById('jediName');
 const jediSpecie = document.getElementById('jediSpecie');
 
+//- Cargar Jedis -/
 async function loadJedis() {
     try {
-        jedisList.textContent = "";
+        jedisContainer.textContent = "";
         let response = await fetch(`${URL}/jedis`);
         if (response.ok) {
             let jedis = await response.json();
             //console.log(jedis);
             jedis.forEach(jedi => {
-                insertJedi(jedi)
+                insertJediCard(jedi)
             });
         } else {
             throw new Error('Fallo al cargar los datos')
@@ -22,28 +24,22 @@ async function loadJedis() {
     }
 }
 
-function insertJedi(jedi) {
-    const li = document.createElement('li');
-    li.textContent = jedi.name;
-    const buttonDelete = document.createElement('button');
-    buttonDelete.textContent = "Borrar";
-    buttonDelete.classList.add('delete');
-    buttonDelete.dataset.id = jedi.id;
-    li.append(buttonDelete);
-    const buttonEdit = document.createElement('button');
-    buttonEdit.textContent = "Editar";
-    buttonEdit.classList.add('edit');
-    buttonEdit.dataset.id = jedi.id;
-    li.append(buttonEdit);
-    const buttonView = document.createElement('button');
-    buttonView.textContent = "Mostrar";
-    buttonView.classList.add('show');
-    buttonView.dataset.id = jedi.id;
-    li.append(buttonView);
-    jedisList.append(li);
+function insertJediCard(jedi) {
+    const card = document.createElement('div');
+    card.classList.add('jedi-card');
+
+    card.innerHTML = `
+        <h3>${jedi.name}</h3>
+        <p><strong>Especie:</strong> ${jedi.species}</p>
+        <button class="delete" data-id="${jedi.id}">Borrar</button>
+        <button class="edit" data-id="${jedi.id}">Editar</button>
+        <button class="show" data-id="${jedi.id}">Mostrar</button>
+    `;
+    jedisContainer.append(card);
 }
 
-jedisList.addEventListener('click', (event) => {
+jedisContainer.addEventListener('click', (event) => {
+    //const id = event.target.dataset.id;
     if (event.target.classList.contains('delete')) {
         deleteJedi(event.target.dataset.id);
     };
@@ -78,6 +74,10 @@ jediForm.addEventListener('submit', async (event) => {
         species: jediSpecie.value
     }
     console.log("creando...", data);
+    if (!data.name || !data.species) {
+        alert("Nombre y especie obligatorios");
+        return;
+    }
     try {
         let response = await fetch(`${URL}/jedis`, {
             method: "POST",
@@ -88,6 +88,8 @@ jediForm.addEventListener('submit', async (event) => {
         });
         if (response.ok) {
             console.log('Elemento creado');
+            jediName.value = "";
+            jediSpecie.value = "";
             loadJedis();
         } else {
             if (response.status == 400) {
@@ -109,17 +111,17 @@ async function editJedi(id) {
         return;
     }
     console.log("Nombre: %s, Especie: %s", newName, newSpecies);
-    let data = {
-        name: newName,
-        species: newSpecies
-    }
+
     try {
         let response = await fetch(`${URL}/jedis/${id}`, {
             method: "PUT",
             headers: {
                 "Content-type": 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({
+                name: newName,
+                species: newSpecies
+            })
         });
         if (response.ok) {
             console.log('Elemento actualizado');
@@ -137,7 +139,7 @@ async function showJedi(id) {
         let response = await fetch(`${URL}/jedis/${id}`);
         if (response.ok) {
             let jedi = await response.json();
-            alert(jedi.name);
+            alert(`Nombre: ${jedi.name}, Especie: ${jedi.species}`);
         } else {
             if (response.status == 404) {
                 let data = await response.json();
