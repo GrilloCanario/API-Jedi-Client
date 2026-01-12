@@ -18,7 +18,7 @@ body {
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
     color: var(--jedi-dark);
 
-    background-image: url("/images/LogoJedi.jpg");
+    background-image: url("../images/LogoJedi.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -152,7 +152,7 @@ footer {
 /*- CONTENEDOR DE TARJETAS JEDI -*/
 #jedisContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     margin-top: 35px;
 }
