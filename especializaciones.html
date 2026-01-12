@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>API Jedi</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="especializaciones.js" defer></script>
+    <script src="./js/especializaciones.js" defer></script>
 </head>
 
 <body>
@@ -24,11 +24,28 @@
 
     <main>
         <h1><strong>Especializaciones</strong></h1>
-        <p class="p-newElement">
-            <a href="createEspecializacion.html">
-                <button class="boton-newElemenet">Crear</button>
-            </a>
+        
+        <h2>Crear nueva forma de combate</h2>
+        <form id="Formulario">
+            <p>
+                <input type="text" name="name" id="SpecName" placeholder="Nombre de la especialización...">
+                <br><br>
+                <textarea name="styleCombat" id="specDescription" placeholder="Descripción de la especialización..."
+                    rows="4"></textarea>
+                <br><br>
+                <input class="boton-newElemenet" type="submit" value="Crear">
+                <a href="especializaciones.html">
+                    <button class="boton-CancelElement" type="button">Cancelar</button>
+                </a>
+            </p>
+        </form>
+
+
+
+        <p id="successMessage">
+            Especialización creado con éxito.
         </p>
+        <h2>Listado de Especializaciones</h2>
         <div id="specializationsContainer"></div>
     </main>
 

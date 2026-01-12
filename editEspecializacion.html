@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Crear Jedi</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="editEspecializacion.js" defer></script>
+    <script src="./js/editEspecializacion.js" defer></script>
 </head>
 
 <body>
@@ -33,18 +33,17 @@
 
             <label>
                 Descripción:
-                <textarea id="specDescription" rows="10"></textarea>
+                <textarea id="specDescription" rows="10" required></textarea>
             </label>
             <br><br>
 
-            <br>
-            <input class="boton-newElemenet" submit" value="Actualizar Especialización">
+            <input class="boton-newElemenet" type="submit" value="Actualizar Especialización">
             <a href="especializaciones.html">
                 <button class="boton-CancelElement" type="button">Cancelar</button>
             </a>
         </form>
 
-        <p id="successMessage">
+        <p id="successMessage" style="display: none;">
             Especialización actualizada correctamente
         </p>
     </main>
@@ -53,4 +52,5 @@
         <p class="italic-footer"><strong>Que el código luminoso te acompañe</strong></p>
     </footer>
 </body>
+
 </html>

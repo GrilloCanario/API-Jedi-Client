@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Crear Especialización/title>
+    <title>Crear Jedi</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="createEspecializacion.js" defer></script>
+    <script src="./js/editStyleForm.js" defer></script>
 </head>
 
 <body>
@@ -22,29 +22,27 @@
     </header>
 
     <main>
-        <h1>Crear Especialización</h1>
+        <h1>Editar Estilo de Combate</h1>
 
-        <form id="createSpecializationForm">
+        <form id="editStyleForm">
             <label>
                 Nombre:
-                <input type="text" id="specName" required>
+                <input type="text" id="StyleName" required>
             </label>
             <br><br>
-
             <label>
                 Descripción:
-                <textarea id="specDescription" rows="4"></textarea>
+                <textarea id="StyleDescription" rows="10" required></textarea>
             </label>
-            <br>
-            <br>
-            <input class="boton-newElemenet" type="submit" value="Crear Especialización">
-            <a href="especializaciones.html">
+            <br><br>
+            <input class="boton-newElemenet" type="submit" value="Actualizar Estilo">
+            <a href="styleForm.html">
                 <button class="boton-CancelElement" type="button">Cancelar</button>
             </a>
         </form>
 
-        <p id="successMessage">
-            Especialización creada correctamente
+        <p id="successMessage" style="display: none;">
+            Estilo de Combate actualizado correctamente
         </p>
     </main>
     <footer>

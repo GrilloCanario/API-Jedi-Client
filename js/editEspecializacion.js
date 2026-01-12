@@ -2,7 +2,7 @@ const URL = "http://localhost:3030";
 
 // Obtener ID desde la URL
 const params = new URLSearchParams(window.location.search);
-const specializationId = params.get("id");
+const id = params.get("id");
 
 const form = document.getElementById("editEspecializationForm");
 const nameInput = document.getElementById("specName");
@@ -11,17 +11,17 @@ const successMessage = document.getElementById("successMessage");
 
 // ====== Cargar especialización ======
 async function loadSpecialization() {
-    if (!specializationId) {
+    if (!id) {
         alert("ID de especialización no válido");
         return;
     }
 
     try {
-        let response = await fetch(`${URL}/specializations/${specializationId}`);
+        let response = await fetch(`${URL}/specializations/${id}`);
         if (response.ok) {
             let spec = await response.json();
-            nameInput.value = spec.name || "";
-            descInput.value = spec.description || "";
+            nameInput.value = spec.name;
+            descInput.value = spec.description;
         } else {
             throw new Error("No se pudo cargar la especialización");
         }
@@ -34,8 +34,13 @@ async function loadSpecialization() {
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    if (!nameInput.value) {
-        alert("El nombre es obligatorio");
+    if (!id) {
+        alert("ID inválido. Error al actualizar");
+        return;
+    }
+
+    if (!nameInput.value || !descInput.value) {
+        alert("Nombre y descripción son obligatorios");
         return;
     }
 
@@ -45,7 +50,7 @@ form.addEventListener("submit", async (e) => {
     };
 
     try {
-        let response = await fetch(`${URL}/specializations/${specializationId}`, {
+        let response = await fetch(`${URL}/specializations/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

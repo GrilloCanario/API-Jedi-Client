@@ -1,3 +1,4 @@
+/*- INICIO ESTRUCTURA BÁSICA DE PAGINA-*/
 :root {
     --jedi-green: #3FA34D;
     --jedi-blue: #2C7BE5;
@@ -105,7 +106,9 @@ main,
 footer {
     backdrop-filter: blur(3px);
 }
+/*- INICIO ESTRUCTURA BÁSICA DE PAGINA-*/
 
+/*- INICIO BOTONES ELIMINAR,EDITAR,MOSTRAR -*/
 /* Botones generales */
 .delete {
     background-color: #2C7BE5;
@@ -127,7 +130,9 @@ footer {
     margin-left: 10px;
     cursor: pointer;
 }
+/*- FIN BOTONES ELIMINAR,EDITAR,MOSTRAR -*/
 
+/*- INICIO CSS DEL INDEX.HTML -*/
 .historiaJedi {
     text-align: center justify;
     margin-bottom: 20px;
@@ -142,8 +147,9 @@ footer {
     width: 300px;
     height: auto;
 }
+/*- FIN CSS DEL INDEX.HTML -*/
 
-/* ====== CONTENEDOR DE TARJETAS JEDI ====== */
+/*- CONTENEDOR DE TARJETAS JEDI -*/
 #jedisContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -151,7 +157,7 @@ footer {
     margin-top: 35px;
 }
 
-/* ====== TARJETA JEDI ====== */
+/*- TARJETA JEDI -*/
 .jedi-card {
     background-color: var(--jedi-white);
     border: 1px solid var(--jedi-gold);
@@ -177,7 +183,7 @@ footer {
     margin: 6px 0 14px;
 }
 
-/* ====== BOTONES EN TARJETA JEDI ====== */
+/*- BOTONES EN TARJETA JEDI -*/
 .jedi-card button {
     border: none;
     padding: 6px 12px;
@@ -185,7 +191,7 @@ footer {
     font-size: 0.85rem;
 }
 
-/* ====== CONTENEDOR DE TARJETAS STYLE FORM ====== */
+/*- CONTENEDOR DE TARJETAS STYLE FORM -*/
 #styleFormContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -193,7 +199,7 @@ footer {
     margin-top: 35px;
 }
 
-/* ====== TARJETA STYLE FORM ====== */
+/*- TARJETA STYLE FORM -*/
 .styleForm-card {
     background-color: var(--jedi-white);
     border: 1px solid var(--jedi-gold);
@@ -219,7 +225,7 @@ footer {
     margin: 6px 0 14px;
 }
 
-/* ====== BOTONES EN TARJETA STYLE FORM ====== */
+/*- BOTONES EN TARJETA STYLE FORM -*/
 .styleForm-card button {
     border: none;
     padding: 6px 12px;
@@ -227,7 +233,7 @@ footer {
     font-size: 0.85rem;
 }
 
-/* ====== TARJETA ESPECIALIZACION ====== */
+/*- TARJETA ESPECIALIZACION -*/
 .spec-card {
     background-color: var(--jedi-white);
     border: 1px solid var(--jedi-gold);
@@ -291,23 +297,23 @@ footer {
     border-radius:5px;
 }
 
-/* ====== FORMULARIO CREAR FORMAS DE COMBATE ====== */
-form#CombatForm {
+/*- FORMULARIO CREAR FORMAS DE COMBATE -*/
+form#Formulario {
     display: flex;
     flex-direction: column;
-    align-items: center;        /* Centra los inputs y botones horizontalmente */
+    align-items: center;        /*; Centra inputs y botones -*/
     width: 100%;
-    max-width: 450px;           /* Ajusta el ancho del formulario */
-    margin: 0 auto 40px auto;   /* Centra el form dentro de main */
+    max-width: 450px;           /*; ancho formulario -*/
+    margin: 0 auto 40px auto;   /*; Centra el formulario en el dentro de main -*/
     padding: 25px;
     background-color: var(--jedi-white);
     border-radius: 10px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* Inputs y textarea dentro del form */
-form#CombatForm input[type="text"],
-form#CombatForm textarea {
+/*- Inputs y textarea dentro del form -*/
+form#Formulario input[type="text"],
+form#Formulario textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
@@ -316,15 +322,15 @@ form#CombatForm textarea {
     border-radius: 5px;
 }
 
-/* Botones dentro del formulario */
-form#CombatForm .boton-newElemenet,
-form#CombatForm .boton-CancelElement {
+/*- Botones dentro del formulario -*/
+form#Formulario .boton-newElemenet,
+form#Formulario .boton-CancelElement {
     margin: 5px;
     width: 120px;
     text-align: center;
 }
 
-/* Ajustar títulos del form */
+/*- Ajustar títulos del form -*/
 main h2 {
     margin-top: 30px;
     margin-bottom: 20px;
