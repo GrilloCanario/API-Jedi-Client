@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>API Jedi</title>
+    <title>Formas de Combate Jedi</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="styleForm.js" defer></script>
 </head>
@@ -23,23 +23,34 @@
     </header>
 
     <main>
-        <h1><strong>Forma de Combate Jedi</strong></h1>
+        <h1><strong>Formas de Combate Jedi</strong></h1>
+
+        <h2>Crear nueva forma de combate</h2>
         <form id="CombatForm">
             <p>
-                <input type="text" name="name" id="CombatName" placeholder="Nombre del jedi...">
-                <input type="submit" value="Crear">
-                <br> 
-                <textarea name="styleCombat" id="styleCombat"placeholder="Descripción de la forma de combate..."></textarea>
+                <input type="text" name="name" id="CombatName" placeholder="Nombre de la forma de combate...">
+                <br><br>
+                <textarea name="styleCombat" id="styleCombat" placeholder="Descripción de la forma de combate..."
+                    rows="4"></textarea>
+                <br><br>
+                <input class="boton-newElemenet" type="submit" value="Crear">
+                <a href="styleForm.html">
+                    <button class="boton-CancelElement" type="button">Cancelar</button>
+                </a>
             </p>
         </form>
-        <h2>Listado de Formas Combate</h2>
+        <p id="successMessage">
+            Jedi actualizado con éxito
+        </p>
+        <h2>Listado de Formas de Combate</h2>
         <div id="styleFormContainer"></div>
     </main>
 
     <footer>
-        <p>&copy; 2026 - Mi API Jedi </p> <p class="italic-footer"><strong>Que el código luminoso te acompañe</strong></p>
+        <p>&copy; 2026 - Mi API Jedi</p>
+        <p class="italic-footer"><strong>Que el código luminoso te acompañe</strong></p>
     </footer>
 
 </body>
 
-</html>
+</html>>

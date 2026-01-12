@@ -67,6 +67,10 @@ main {
     box-shadow:
         0 8px 24px rgba(0, 0, 0, 0.15),
         inset 0 0 0 1px rgba(201, 180, 88, 0.35);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra todo el contenido de main */
 }
 
 /* Tipografía interna */
@@ -102,6 +106,7 @@ footer {
     backdrop-filter: blur(3px);
 }
 
+/* Botones generales */
 .delete {
     background-color: #2C7BE5;
     color: white;
@@ -122,21 +127,23 @@ footer {
     margin-left: 10px;
     cursor: pointer;
 }
+
 .historiaJedi {
     text-align: center justify;
     margin-bottom: 20px;
 }
+
 .ParrafoImagenEjemplo{
     text-align: center;
 }
+
 .ImagenEjemplo {
     text-align: center;
     width: 300px;
     height: auto;
 }
 
-
-/* ====== CONTENEDOR DE TARJETAS JEDI====== */
+/* ====== CONTENEDOR DE TARJETAS JEDI ====== */
 #jedisContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -178,9 +185,7 @@ footer {
     font-size: 0.85rem;
 }
 
-/*-----------------------------------------------------*/
-
-/* ====== CONTENEDOR DE TARJETAS STYLE FORM====== */
+/* ====== CONTENEDOR DE TARJETAS STYLE FORM ====== */
 #styleFormContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -220,4 +225,108 @@ footer {
     padding: 6px 12px;
     border-radius: 4px;
     font-size: 0.85rem;
+}
+
+/* ====== TARJETA ESPECIALIZACION ====== */
+.spec-card {
+    background-color: var(--jedi-white);
+    border: 1px solid var(--jedi-gold);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.spec-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+.spec-card h3 {
+    text-align: center;
+    color: var(--jedi-blue);
+}
+
+.spec-card p {
+    margin: 6px 0 14px;
+}
+
+.spec-card button {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.p-newElement{
+    text-align:center; 
+    margin-bottom:20px;
+}
+
+.boton-newElemenet{
+    padding:10px 15px; 
+    background-color:var(--jedi-green); 
+    color:white;
+    border:none; 
+    border-radius:5px; 
+    cursor:pointer;
+}
+
+.boton-CancelElement{
+    padding:10px 15px; 
+    background-color:var(--jedi-blue); 
+    color:white;
+    border:none; 
+    border-radius:5px; 
+    cursor:pointer;
+}
+
+#successMessage {
+    display:none; 
+    background: #3FA34D; 
+    color:white; 
+    padding:10px; 
+    border-radius:5px;
+}
+
+/* ====== FORMULARIO CREAR FORMAS DE COMBATE ====== */
+form#CombatForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* Centra los inputs y botones horizontalmente */
+    width: 100%;
+    max-width: 450px;           /* Ajusta el ancho del formulario */
+    margin: 0 auto 40px auto;   /* Centra el form dentro de main */
+    padding: 25px;
+    background-color: var(--jedi-white);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Inputs y textarea dentro del form */
+form#CombatForm input[type="text"],
+form#CombatForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botones dentro del formulario */
+form#CombatForm .boton-newElemenet,
+form#CombatForm .boton-CancelElement {
+    margin: 5px;
+    width: 120px;
+    text-align: center;
+}
+
+/* Ajustar títulos del form */
+main h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
 }

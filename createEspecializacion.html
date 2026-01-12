@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Especialización/title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="createEspecializacion.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="jedi.html">Jedi</a></li>
+                <li><a href="rangos.html">Rangos</a></li>
+                <li><a href="styleForm.html">Formas Combate</a></li>
+                <li><a href="especializaciones.html">Especializaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Crear Especialización</h1>
+
+        <form id="createSpecializationForm">
+            <label>
+                Nombre:
+                <input type="text" id="specName" required>
+            </label>
+            <br><br>
+
+            <label>
+                Descripción:
+                <textarea id="specDescription" rows="4"></textarea>
+            </label>
+            <br>
+            <br>
+            <input class="boton-newElemenet" type="submit" value="Crear Especialización">
+            <a href="especializaciones.html">
+                <button class="boton-CancelElement" type="button">Cancelar</button>
+            </a>
+        </form>
+
+        <p id="successMessage">
+            Especialización creada correctamente
+        </p>
+    </main>
+    <footer>
+        <p>&copy; 2026 - Mi API Jedi </p>
+        <p class="italic-footer"><strong>Que el código luminoso te acompañe</strong></p>
+    </footer>
+</body>
+
+</html>

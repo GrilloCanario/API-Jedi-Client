@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Jedi</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="editJedi.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="jedi.html">Jedi</a></li>
+                <li><a href="rangos.html">Rangos</a></li>
+                <li><a href="styleForm.html">Formas Combate</a></li>
+                <li><a href="especializaciones.html">Especializaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Editar Jedi</h1>
+
+        <form id="editJediForm">
+            <h3>Datos Personales:</h3>
+            <p>
+                <label for="">Nombre: </label>
+                <input type="text" id="jediName" placeholder="Nombre del Jedi" required>
+            </p>
+            <p>
+                <label for="">Raza:</label>
+                <input type="text" id="jediSpecies" placeholder="Especie" required>
+            </p>
+            <h3>Rango Jedi</h3>
+            <div id="rankContainer"></div>
+            
+            <h3>Formas de Combate:</h3>
+            <div id="styleFormContainer"></div>
+
+            <h3>Especializaciones</h3>
+            <div id="specializationContainer"></div>
+
+            <br>
+            <input class="boton-newElemenet" type="submit" value="Actualizar Jedi">
+            <a href="jedi.html">
+                <button class="boton-CancelElement" type="button">Cancelar</button>
+            </a>
+        </form>
+
+        <p id="successMessage">
+            Jedi actualizado con éxito
+        </p>
+    </main>
+    <footer>
+        <p>&copy; 2026 - Mi API Jedi </p>
+        <p class="italic-footer"><strong>Que el código luminoso te acompañe</strong></p>
+    </footer>
+</body>
+</html>
